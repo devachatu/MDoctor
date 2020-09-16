@@ -6,16 +6,21 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff4749a0) ,
+      backgroundColor: Color(0xff4749a0),
       body: Center(
-
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Image.asset('./assets/images/logo.png'),
-//            Text(
-//              'MDoctor',
-//            ),
+            Padding(
+              padding: EdgeInsets.only(top:350.0),
+              child: Image.asset('./assets/images/logo.png',
+                  height:30),
+            ),
+            Padding(
+              padding: EdgeInsets.only(top:300.0),
+              child: Image.asset('./assets/images/logo2.png',
+                  height:60),
+            )
           ],
         ),
       ),

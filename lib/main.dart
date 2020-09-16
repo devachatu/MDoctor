@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mdoctor/Screens/MemberLogin/MemberLogin.dart';
 import 'package:mdoctor/Screens/WelcomeScreen/WelcomeScreen.dart';
 
 void main() {
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: WelcomeScreen(),
+      home: MemberLogin(),
     );
   }
 }
