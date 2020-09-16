@@ -1,8 +1,23 @@
+import 'dart:async';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mdoctor/Screens/MemberLogin/MemberLogin.dart';
 
+class WelcomeScreen extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return WelcomeState();
+  }
+}
 
-class WelcomeScreen extends StatelessWidget {
+class WelcomeState extends State<WelcomeScreen> {
   // This widget is the root of your application.
+  @override
+  void initState() {
+  // TODO: implement initState
+  super.initState();
+  startTime();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,6 +39,17 @@ class WelcomeScreen extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+  startTime() async {
+    var duration = new Duration(seconds: 5);
+    return new Timer(duration, route);
+  }
+
+  route() {
+    Navigator.pushReplacement(context, MaterialPageRoute(
+        builder: (context) => MemberLogin()
+      )
     );
   }
 

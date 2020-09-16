@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 
 class MemberLogin extends StatelessWidget {
+  static String PassWord,PhoneNum;
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,6 @@ class MemberLogin extends StatelessWidget {
           ),
         ),
         Container(
-
           child: Row(
             children: <Widget>[
               Padding(
@@ -71,8 +71,10 @@ class MemberLogin extends StatelessWidget {
                   padding: EdgeInsets.only(left:20),
                   child: SizedBox(width: 200,
                       child: TextField(
+                        onChanged: (newText) { PhoneNum = newText; },
                         decoration: InputDecoration(
-                          labelText: "Enter your Mobile Number",
+                          hintText: "Enter your Mobile Number",
+                          hintStyle: TextStyle(color: Colors.grey),
                         ),
                       )
                   ),
@@ -96,9 +98,13 @@ class MemberLogin extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(left:40),
                 child: SizedBox(width: 300,
-                    child: TextField(
+                    child: TextFormField(
+                      onChanged: (newText) { PassWord = newText; },
+                      obscureText: true,
+                      validator: (val) => val.length < 6 ? 'Password too short.' : null,
                       decoration: InputDecoration(
-                        labelText: "Enter your Password",
+                        hintText: "Enter your Password",
+                        hintStyle: TextStyle(color: Colors.grey),
                       ),
                     )
                 ),
@@ -131,7 +137,8 @@ class MemberLogin extends StatelessWidget {
                     elevation: 5.0,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8.0)),
-                    onPressed: () {  },
+                    onPressed: () { print(PhoneNum);
+                                    print(PassWord); },
                     child:Text('Sign In',
                         style: TextStyle(
                             color: Color(0xffffffff),
