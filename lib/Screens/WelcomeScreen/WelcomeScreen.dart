@@ -8,12 +8,11 @@ class WelcomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xff4749a0) ,
       body: Center(
+
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Image.asset('logo.png',
-            width:200,
-            height:400),
+            Image.asset('./assets/images/logo.png'),
 //            Text(
 //              'MDoctor',
 //            ),
