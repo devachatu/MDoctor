@@ -7,7 +7,19 @@ class WelcomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xff4749a0) ,
-
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Image.asset('logo.png',
+            width:200,
+            height:400),
+//            Text(
+//              'MDoctor',
+//            ),
+          ],
+        ),
+      ),
     );
   }
 
