@@ -1,5 +1,9 @@
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:mdoctor/Screens/EditProfile/EditProfile.dart';
+import 'package:mdoctor/Screens/HomeScreen/HomeScreen.dart';
+import 'package:mdoctor/Screens/PasswordChange/PasswordChange.dart';
+import 'package:mdoctor/Screens/WelcomeScreen/WelcomeScreen.dart';
 
 
 class MemberLogin extends StatelessWidget {
@@ -10,12 +14,17 @@ class MemberLogin extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xff4749a0),
       body: Column(children: <Widget>[
-        Container(
-          margin: EdgeInsets.only(top:60),
-          child: Padding(
-            padding: EdgeInsets.only(right:320),
-            child: Image.asset('./assets/images/back.png',
-                width:20),
+        Align(
+          alignment: Alignment.topLeft,
+          child:
+          IconButton(
+            padding: EdgeInsets.only(top:40,left:10),
+            onPressed: (){
+              Navigator.pushReplacement(context, MaterialPageRoute(
+                  builder: (context) => WelcomeScreen()));
+            },
+            icon:Icon(Icons.arrow_back_ios,
+                color:Colors.white),
           ),
         ),
         Container(
@@ -36,9 +45,7 @@ class MemberLogin extends StatelessWidget {
         ),
         Container(
           alignment: Alignment.center,
-          constraints: BoxConstraints.tightForFinite(
-            height:608,
-          ),
+          height:MediaQuery.of(context).size.height*0.734,
           decoration: BoxDecoration(
             color: Colors.white,
             shape: BoxShape.rectangle,
@@ -115,39 +122,46 @@ class MemberLogin extends StatelessWidget {
             Row(children: <Widget>[
               Padding(
                 padding: EdgeInsets.only(left:190,top:30),
-                child: Text('Forgot your Password?',
-                    style: TextStyle(
-                        color: Color(0xff4749a0),
-                        fontWeight: FontWeight.bold,
-                        decoration: TextDecoration.underline,
-                        fontSize: 15)
-                ),
+                child:GestureDetector(
+                  onTap: (){
+                    Navigator.pushReplacement(context, MaterialPageRoute(
+                        builder: (context) => PasswordChange()));
+                  },
+                  child:Text('Forgot your Password?',
+                      style: TextStyle(
+                          color: Color(0xff4749a0),
+                          fontWeight: FontWeight.bold,
+                          decoration: TextDecoration.underline,
+                          fontSize: 15)
+                  ),
+                )
+
               ),
 
             ]
             ),
             Row(children: <Widget>[
               Padding(
-                padding: EdgeInsets.only(left:110,top:40),
-                child: SizedBox(
-                  width:150.0,
-                  height:50.0,
-                  child: RaisedButton(
-                    color:Color(0xfffc8f56),
-                    elevation: 5.0,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8.0)),
-                    onPressed: () { print(PhoneNum);
-                                    print(PassWord); },
-                    child:Text('Sign In',
-                        style: TextStyle(
-                            color: Color(0xffffffff),
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15)
+                  padding: EdgeInsets.only(left:110,top:40),
+                  child: SizedBox(
+                    width:150.0,
+                    height:50.0,
+                    child: RaisedButton(
+                      color:Color(0xfffc8f56),
+                      elevation: 5.0,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8.0)),
+                      onPressed: () { Navigator.pushReplacement(context, MaterialPageRoute(
+                          builder: (context) => HomeScreen())); },
+                      child:Text('Sign In',
+                          style: TextStyle(
+                              color: Color(0xffffffff),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15)
 
+                      ),
                     ),
-                  ),
-                )
+                  )
 
 
               )
@@ -165,13 +179,20 @@ class MemberLogin extends StatelessWidget {
               ),
               Padding(
                 padding: EdgeInsets.only(top:40),
-                child: Text('Sign Up' ,
-                    style: TextStyle(
+                child:GestureDetector(
+                      onTap: (){
+                        Navigator.pushReplacement(context, MaterialPageRoute(
+                            builder: (context) => EditProfile()));
+                      },
+                      child:Text('Sign Up' ,
+                      style: TextStyle(
                         color: Color(0xfffc8f56),
                         fontWeight: FontWeight.bold,
                         decoration: TextDecoration.underline,
                         fontSize: 15)
-                ),
+    ),
+    )
+
               ),
               Padding(
                 padding: EdgeInsets.only(top:40),

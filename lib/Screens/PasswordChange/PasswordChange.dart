@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mdoctor/Screens/MemberLogin/MemberLogin.dart';
 class PasswordChange extends StatefulWidget{
   @override
   _PasswordChangeState createState() => _PasswordChangeState();
@@ -15,6 +16,19 @@ class _PasswordChangeState extends State<PasswordChange>{
               height: 200,
               decoration: BoxDecoration(
                   color: Color(0xff4749a0)
+              ),
+              child:Align(
+                alignment: Alignment.topLeft,
+                child:
+                IconButton(
+                  padding: EdgeInsets.only(top:40,left:10),
+                  onPressed: (){
+                    Navigator.pushReplacement(context, MaterialPageRoute(
+                        builder: (context) => MemberLogin()));
+                  },
+                  icon:Icon(Icons.arrow_back_ios,
+                      color:Colors.white),
+                ),
               ),
             ),
             Padding(

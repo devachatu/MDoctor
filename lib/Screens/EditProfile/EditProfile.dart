@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mdoctor/Screens/MemberLogin/MemberLogin.dart';
 class EditProfile extends StatefulWidget{
   @override
   _EditProfileState createState() => _EditProfileState();
@@ -15,6 +16,19 @@ class _EditProfileState extends State<EditProfile>{
               height: 200,
               decoration: BoxDecoration(
                   color: Color(0xff4749a0)
+              ),
+              child:Align(
+                alignment: Alignment.topLeft,
+                child:
+                IconButton(
+                  padding: EdgeInsets.only(top:40,left:10),
+                  onPressed: (){
+                    Navigator.pushReplacement(context, MaterialPageRoute(
+                        builder: (context) => MemberLogin()));
+                  },
+                  icon:Icon(Icons.arrow_back_ios,
+                      color:Colors.white),
+                ),
               ),
             ),
             Padding(
