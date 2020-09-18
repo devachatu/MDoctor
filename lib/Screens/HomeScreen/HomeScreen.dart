@@ -47,43 +47,53 @@ class _HomeScreenState extends State<HomeScreen>{
         ico=Icons.person;
     }
     return Card(
-      elevation: 5,
 
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(8.0),
-      ),
-      child:Stack(
-        children: <Widget>[
-          Align(
-            alignment: Alignment.topCenter,
-            child:Padding(
-              padding: EdgeInsets.only(top:20),
-              child:ClipRRect(
-                borderRadius:BorderRadius.circular(10),
-                child:Container(
-                  padding: EdgeInsets.only(top:0),
-                  height: MediaQuery.of(context).size.height*0.12,
-                  width:MediaQuery.of(context).size.width*0.35,
-                  color: col,
-                  child:Align(
-                    alignment: Alignment.center,
-                    child:Icon(ico,size: 40,),
-                  ),
-                ),
-              )
-            )
+        elevation: 5,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8.0),
+        ),
+
+        child:Stack(
+          children: <Widget>[
+
+            Align(
+                alignment: Alignment.topCenter,
+                child:Padding(
+                    padding: EdgeInsets.only(top:20),
+                    child:ClipRRect(
+                      borderRadius:BorderRadius.circular(10),
+                      child:Container(
+                        padding: EdgeInsets.only(top:0),
+                        height: MediaQuery.of(context).size.height*0.12,
+                        width:MediaQuery.of(context).size.width*0.35,
+                        color: col,
+                        child:Align(
+                          alignment: Alignment.center,
+                          child:Icon(ico,size: 40,),
+                        ),
+                      ),
+                    )
+                )
 
 
-          ),
-          Align(
-              alignment:Alignment.bottomCenter,
-              child:Padding(
-                padding: EdgeInsets.only(bottom:10),
-                child:text,
-              ))
-        ],
-      )
-      );
+            ),
+            Align(
+                alignment:Alignment.bottomCenter,
+                child:Padding(
+                  padding: EdgeInsets.only(bottom:10),
+                  child:text,
+                )),
+            InkWell(
+              onTap: () {}, // needed
+              child: Ink( // use Ink
+                width: 200,
+                height: 200,
+                color: Colors.transparent,
+              ),
+            ),
+          ],
+        )
+    );
   }
   String name,dob, medID,selectedChoice = "",emailID,experienceInYears,qualifications,specializations  ;
   @override
